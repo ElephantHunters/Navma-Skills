@@ -1,7 +1,7 @@
 ---
 name: silent-fail-check
 description: >
-  Use this skill ONLY when Naveen explicitly types /silent-fail-check after a file
+  Use this skill ONLY when the user explicitly types /silent-fail-check after a file
   has been generated. Do NOT trigger automatically after every file generation.
   This is a manual, on-demand verification skill — not an auto-firing protocol.
 
@@ -21,7 +21,7 @@ a ReportLab PDF script exited cleanly, printed "PDF generated successfully",
 but produced a 5.3KB file with no visible content — because `ROUNDEDCORNERS`
 is not a valid TableStyle property and was silently ignored.
 
-**Rule**: Only run this checklist when Naveen types `/silent-fail-check`. Do not auto-trigger after every file generation.
+**Rule**: Only run this checklist when the user types `/silent-fail-check`. Do not auto-trigger after every file generation.
 
 ---
 

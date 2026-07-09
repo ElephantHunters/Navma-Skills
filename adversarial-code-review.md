@@ -1,8 +1,8 @@
 ---
 name: adversarial-code-review
 description: >
-  Use this skill whenever Naveen has completed a build and wants the code
-  reviewed before shipping. Triggers when Naveen types /adversarial-code-review,
+  Use this skill whenever the user has completed a build and wants the code
+  reviewed before shipping. Triggers when the user types /adversarial-code-review,
   /code-review, or /code_critique, says "review this code", "check this before
   I ship", "what did you miss", or pastes code and asks for a critique.
   This skill prevents the class of problems where code that looks complete
@@ -25,7 +25,7 @@ The goal is NOT to validate the code. The goal is to break it.
 
 ### Mode A — In-Chat Review (Claude reviews its own code)
 
-When Naveen types /code_critique or /adversarial-code-review in this chat,
+When the user types /code_critique or /adversarial-code-review in this chat,
 Claude reviews the most recently produced code as if it were reviewing
 someone else's work — adversarially, not helpfully.
 
@@ -80,7 +80,7 @@ VERDICT
 
 ### Mode B — Second AI Review (Claude provides the prompt)
 
-When Naveen wants to run the code through ChatGPT, Gemini, or another model,
+When the user wants to run the code through ChatGPT, Gemini, or another model,
 Claude provides this exact prompt to paste into the second AI:
 
 ```
@@ -100,7 +100,7 @@ about the current state.
 [PASTE CODE HERE]
 ```
 
-After the second AI responds, Naveen brings the findings back to Claude
+After the second AI responds, the user brings the findings back to Claude
 with: "GPT flagged these — fix them." Claude then addresses each finding.
 
 ---
@@ -112,7 +112,7 @@ with: "GPT flagged these — fix them." Claude then addresses each finding.
 | Quick check mid-session | Mode A — in-chat |
 | Before going live on anything important | Mode B — second AI |
 | After a complex build with many moving parts | Both modes |
-| Naveen has ChatGPT open | Mode B — different blind spots |
+| the user has ChatGPT open | Mode B — different blind spots |
 
 ---
 
@@ -132,7 +132,7 @@ with: "GPT flagged these — fix them." Claude then addresses each finding.
 - Never lead with praise — lead with problems
 - If the code is genuinely solid, say so concisely — don't invent issues
 - Always rank by severity — CRITICAL issues are fixed before shipping
-- In Mode B, always give Naveen the exact prompt — don't paraphrase it
+- In Mode B, always give the user the exact prompt — don't paraphrase it
 - After fixes are applied, run the review again on the updated code
 
 ---

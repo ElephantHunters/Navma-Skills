@@ -2,12 +2,12 @@
 name: context-loop
 description: >
   Use this skill to manage session continuity across Claude conversations using
-  AGENTS.md as a persistent project memory file. Triggers whenever Naveen starts
+  AGENTS.md as a persistent project memory file. Triggers whenever the user starts
   a new session and pastes AGENTS.md, types /context-loop, says "let's pick up
   where we left off", "here's my AGENTS.md", "briefing", or asks Claude to
   capture session learnings at the end of a conversation. Also triggers at session
-  end when Naveen types /learnings. This skill prevents the class of problems
-  where Claude loses all project context between sessions and Naveen has to
+  end when the user types /learnings. This skill prevents the class of problems
+  where Claude loses all project context between sessions and the user has to
   re-explain everything from scratch. Always apply this skill at the start AND
   end of every project session — it is the save-and-restore system for all builds.
 ---
@@ -20,7 +20,7 @@ across conversations. Claude has no memory between sessions — this skill is th
 The loop has two moments: **session start** (restore) and **session end** (save).
 Both are required. Skipping the end means the next session starts blind.
 
-Naveen works in two modes. The skill behaves slightly differently in each.
+the user works in two modes. The skill behaves slightly differently in each.
 
 ---
 
@@ -29,11 +29,11 @@ Naveen works in two modes. The skill behaves slightly differently in each.
 Before applying the loop, Claude should detect which mode is active:
 
 **Chat Mode** — a standalone conversation, not inside a Claude Project.
-Naveen typically converts interesting chats into Projects once they reach
+the user typically converts interesting chats into Projects once they reach
 a meaningful conclusion or produce something worth continuing.
 
 **Project Mode** — inside a Claude Project. Project Knowledge is available.
-AGENTS.md lives in Project Knowledge, not on Naveen's desktop.
+AGENTS.md lives in Project Knowledge, not on the user's desktop.
 Static files (skills, preferences, shortcodes) are already loaded automatically.
 
 If unsure which mode is active, check whether Project Knowledge is present
@@ -43,31 +43,31 @@ in context. If it is — Project Mode. If not — Chat Mode.
 
 ## Chat Mode
 
-Used for standalone conversations. Naveen pastes AGENTS.md manually each session.
+Used for standalone conversations. the user pastes AGENTS.md manually each session.
 
 ```
 SESSION START
-  └── Naveen pastes AGENTS.md into chat
+  └── the user pastes AGENTS.md into chat
   └── Claude reads it, confirms understanding, begins work
 
 ... session happens ...
 
 SESSION END
-  └── Naveen types: /learnings
+  └── the user types: /learnings
   └── Claude writes structured update (see format below)
-  └── Naveen copies the output
-  └── Naveen pastes it into AGENTS.md (replaces old content)
+  └── the user copies the output
+  └── the user pastes it into AGENTS.md (replaces old content)
   └── Saves file on device for next session
 
 CHAT GETS INTERESTING / REACHES MEANINGFUL CONCLUSION
-  └── Naveen converts chat to a Claude Project
+  └── the user converts chat to a Claude Project
   └── Creates AGENTS.md from the conversation so far
   └── Uploads AGENTS.md to Project Knowledge
   └── Switches to Project Mode from here
 ```
 
 **Chat Mode rules:**
-- If Naveen forgets to paste AGENTS.md, prompt: "Do you have an AGENTS.md
+- If the user forgets to paste AGENTS.md, prompt: "Do you have an AGENTS.md
   for this project? Paste it and I'll pick up exactly where we left off."
 - If no AGENTS.md exists yet, offer to create one from the current conversation.
 
@@ -82,15 +82,15 @@ AGENTS.md lives in Project Knowledge — no manual paste needed at session start
 SESSION START
   └── AGENTS.md is already in Project Knowledge — Claude reads it automatically
   └── Claude confirms understanding, begins work
-  └── No paste required from Naveen
+  └── No paste required from the user
 
 ... session happens ...
 
 SESSION END
-  └── Naveen types: /learnings
+  └── the user types: /learnings
   └── Claude writes structured update (see format below)
-  └── Naveen copies the output
-  └── Naveen updates AGENTS.md and re-uploads to Project Knowledge
+  └── the user copies the output
+  └── the user updates AGENTS.md and re-uploads to Project Knowledge
       (replaces the old version)
 
 NEXT SESSION
@@ -99,12 +99,12 @@ NEXT SESSION
 ```
 
 **Project Mode rules:**
-- Do NOT ask Naveen to paste AGENTS.md — it is already in Project Knowledge
-- Do NOT ask Naveen to re-explain static context (skills, preferences,
+- Do NOT ask the user to paste AGENTS.md — it is already in Project Knowledge
+- Do NOT ask the user to re-explain static context (skills, preferences,
   shortcodes) — those are already loaded via Project Knowledge
 - The only thing that changes session to session is AGENTS.md content —
   focus confirmation paragraph on what changed since last session
-- After /learnings, remind Naveen: "Update AGENTS.md in Project Knowledge
+- After /learnings, remind the user: "Update AGENTS.md in Project Knowledge
   before closing — replace the old version."
 
 **What Project Knowledge handles automatically (no loop needed):**
@@ -129,7 +129,7 @@ When context-loop triggers at session start:
 2. Confirm understanding in ONE short paragraph — what the project is,
    where it was left, what the next step is
 3. Call out any blockers or unresolved issues from last session
-4. Do NOT ask Naveen to re-explain anything already in the file
+4. Do NOT ask the user to re-explain anything already in the file
 5. Begin work immediately — no preamble, no "great, let's get started"
 
 **Example confirmation:**
@@ -141,7 +141,7 @@ logic. Avoiding threading.Thread — using tenacity instead. Ready."
 
 ## Session End — /learnings Format (both modes)
 
-When Naveen types /learnings, output EXACTLY this structure.
+When the user types /learnings, output EXACTLY this structure.
 Keep the entire update under 200 words. Be specific — no vague summaries.
 
 ```
@@ -207,12 +207,12 @@ NEXT STEP: [one line]
 
 ## Conversion Moment — Chat to Project
 
-When Naveen says the chat has been converted to a project, or asks to
+When the user says the chat has been converted to a project, or asks to
 convert it, Claude should:
 
 1. Offer to generate a fresh AGENTS.md from the current conversation
 2. Format it using the standard structure above
-3. Tell Naveen: "Upload this to Project Knowledge — it becomes your
+3. Tell the user: "Upload this to Project Knowledge — it becomes your
    permanent briefing file for this project."
 4. From the next session, switch to Project Mode behaviour.
 
@@ -220,7 +220,7 @@ convert it, Claude should:
 
 ## Rules
 
-- Never ask Naveen to re-explain context already in AGENTS.md
+- Never ask the user to re-explain context already in AGENTS.md
 - Never skip /learnings — it is the save point
 - /learnings output must always follow the exact format above
 - Keep each session update under 200 words — brevity is the point

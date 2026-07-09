@@ -1,8 +1,8 @@
 ---
 name: build
 description: >
-  Use this skill whenever Naveen starts a new build, project, or feature request.
-  Triggers when Naveen types /build, says "build me", "create", "make", "I want
+  Use this skill whenever the user starts a new build, project, or feature request.
+  Triggers when the user types /build, says "build me", "create", "make", "I want
   to build", or describes something they want to ship. This skill prevents the
   class of problems where Claude jumps straight to implementation without
   understanding the problem, choosing the right approach, or planning phases.
@@ -16,7 +16,7 @@ A structured 4-phase approach to every build. Forces research and planning
 before a single line of code is written. Prevents building the wrong thing fast.
 
 The 4 phases must happen in order. Claude does not move to the next phase
-until Naveen approves the current one.
+until the user approves the current one.
 
 ---
 
@@ -30,11 +30,11 @@ Claude must answer:
 - What is the best approach for this specific problem?
 - What libraries, APIs, or tools are most appropriate?
 - What are the known pitfalls or edge cases for this type of build?
-- Are there simpler alternatives to what Naveen described?
+- Are there simpler alternatives to what the user described?
 
 Output: a short research summary (5–10 lines max). No code yet.
 
-Wait for Naveen's approval before moving to Phase 2.
+Wait for the user's approval before moving to Phase 2.
 
 ---
 
@@ -53,7 +53,7 @@ Output: a structured plan. No code yet.
 Each phase in the plan maps to a separate git branch:
 `feature/phase-1-scaffold`, `feature/phase-2-core-logic`, etc.
 
-Wait for Naveen's approval before moving to Phase 3.
+Wait for the user's approval before moving to Phase 3.
 
 ---
 
@@ -71,7 +71,7 @@ Output: a tracking checklist. No code yet.
 This checklist is the source of truth for the build. Update it at the
 start of every subsequent session by pasting it into AGENTS.md.
 
-Wait for Naveen's approval before moving to Phase 4.
+Wait for the user's approval before moving to Phase 4.
 
 ---
 
@@ -80,11 +80,11 @@ Wait for Naveen's approval before moving to Phase 4.
 Now write the code — one phase at a time.
 
 Rules for implementation:
-- Build Phase 1 first. Stop. Show Naveen the output.
-- Only move to Phase 2 after Naveen confirms Phase 1 works.
+- Build Phase 1 first. Stop. Show the user the output.
+- Only move to Phase 2 after the user confirms Phase 1 works.
 - Never build multiple phases in one response.
 - Each phase should be independently testable before the next begins.
-- Add comments to all non-obvious code (Naveen's /comment-all preference).
+- Add comments to all non-obvious code (the user's /comment-all preference).
 - Use harness-first approach if applicable (see harness-first skill).
 
 After each phase: update the tracking checklist.
@@ -99,7 +99,7 @@ After each phase: update the tracking checklist.
    then ask if anything is genuinely ambiguous
 4. Present each phase clearly with a header: "## Phase 1 — Research"
 5. Wait for approval between phases — never auto-proceed
-6. If Naveen skips approval and asks to continue, confirm the skip explicitly
+6. If the user skips approval and asks to continue, confirm the skip explicitly
 
 ---
 
@@ -121,8 +121,8 @@ After each phase: update the tracking checklist.
 - Never skip to Phase 4 without completing Phases 1–3
 - Never write code in Phase 1, 2, or 3
 - Never build multiple phases in a single response
-- Always wait for Naveen's approval between phases
-- If Naveen pushes for speed, acknowledge it but still complete Phase 1
+- Always wait for the user's approval between phases
+- If the user pushes for speed, acknowledge it but still complete Phase 1
   and Phase 2 before touching code — the plan takes minutes, the bugs
   from skipping it take hours
 - Each build phase maps to a separate git branch

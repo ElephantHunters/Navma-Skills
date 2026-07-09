@@ -1,8 +1,8 @@
 ---
 name: really-honest
 description: >
-  Use this skill whenever Naveen wants Claude to re-examine its own previous
-  response with genuine scrutiny. Triggers when Naveen types /really-honest,
+  Use this skill whenever the user wants Claude to re-examine its own previous
+  response with genuine scrutiny. Triggers when the user types /really-honest,
   says "but for real", "are you actually sure", "what did you miss",
   "what's the weakest part of what you just said", or "be honest about this".
   This skill prevents the class of problems where Claude's first response is
@@ -46,7 +46,7 @@ Was there a part of the answer where I moved on too quickly because I
 wasn't sure, or because going deeper would have complicated the response?
 
 **What assumption did I make that could be wrong?**
-Did I assume Naveen's situation matches the general case? Did I assume
+Did I assume the user's situation matches the general case? Did I assume
 a tool or library behaves a certain way? Did I assume a timeline,
 a cost, or a difficulty level without knowing enough?
 
@@ -73,7 +73,7 @@ WHAT I GLOSSED OVER
 [Specific thing Claude skipped or rushed past]
 
 WEAKEST ASSUMPTION
-[The assumption most likely to be wrong for Naveen's situation]
+[The assumption most likely to be wrong for the user's situation]
 
 WHAT COULD BREAK
 [Where the response would fail under challenge or in practice]
@@ -122,7 +122,7 @@ Adapted from Josh Pigford's /but-for-real skill (via Peter Yang's YouTube
 video). Josh uses this to "bully" the AI into re-examining its work,
 specifically to catch hallucinations and overconfident answers.
 
-Renamed /really-honest by Naveen to fit alongside /honest in his
+Renamed /really-honest by the user to fit alongside /honest in his
 Thinking & Reasoning shortcode category. The underlying mechanism is
 the same: a second-pass prompt that activates a different mode of
 scrutiny than the first-pass response generation.

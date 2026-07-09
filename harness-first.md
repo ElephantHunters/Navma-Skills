@@ -1,14 +1,14 @@
 ---
 name: harness-first
 description: >
-  Use this skill whenever Naveen is starting a new coding project, script, or
-  automation. Triggers when Naveen types /harness-first, says "start a new
+  Use this skill whenever the user is starting a new coding project, script, or
+  automation. Triggers when the user types /harness-first, says "start a new
   project", "scaffold this", "set up the structure", or begins any build where
   code will be written across multiple sessions. This skill prevents the class
   of problems where builds lack a testing structure, making it impossible to
   verify that individual components work before wiring them together.
   Always apply at the start of Phase 4 (Implement) in the /build skill.
-  Harness-first is how Naveen's code stays reliable across multi-session builds.
+  Harness-first is how the user's code stays reliable across multi-session builds.
 ---
 
 # Harness-First
@@ -119,10 +119,10 @@ Example log entry:
 2. Always create `logger.py` before running anything
 3. Always scaffold the full folder structure in Phase 1 of implementation
 4. Never write two components without testing the first
-5. After each component is built, show Naveen the harness output —
+5. After each component is built, show the user the harness output —
    do not proceed until it shows PASS
 6. When a test fails, fix it before adding new tests
-7. Add comments to all non-obvious code — this is Naveen's /comment-all
+7. Add comments to all non-obvious code — this is the user's /comment-all
    preference and applies to all code generated in this session
 
 ---
@@ -169,10 +169,10 @@ where the build stands without any re-explanation.
 
 ## Origin
 
-Developed by Naveen as a personal coding protocol for multi-session
+Developed by the user as a personal coding protocol for multi-session
 AI-assisted builds. The core insight: Claude has no memory between sessions,
 so the harness and logger create a verifiable record of what works.
-At session start, Naveen pastes AGENTS.md which includes harness status —
+At session start, the user pastes AGENTS.md which includes harness status —
 Claude knows instantly what's passing, what's failing, and where to start.
 
 Harness-first is what makes the /build + /context-loop combination
