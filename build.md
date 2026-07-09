@@ -84,7 +84,7 @@ Rules for implementation:
 - Only move to Phase 2 after the user confirms Phase 1 works.
 - Never build multiple phases in one response.
 - Each phase should be independently testable before the next begins.
-- Add comments to all non-obvious code (the user's /comment-all preference).
+- Add comments to all non-obvious code so it's readable in future sessions.
 - Use harness-first approach if applicable (see harness-first skill).
 
 After each phase: update the tracking checklist.

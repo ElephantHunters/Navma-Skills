@@ -20,7 +20,7 @@ across conversations. Claude has no memory between sessions — this skill is th
 The loop has two moments: **session start** (restore) and **session end** (save).
 Both are required. Skipping the end means the next session starts blind.
 
-the user works in two modes. The skill behaves slightly differently in each.
+The skill works in two modes depending on how Claude is being used. It behaves slightly differently in each.
 
 ---
 
@@ -133,9 +133,10 @@ When context-loop triggers at session start:
 5. Begin work immediately — no preamble, no "great, let's get started"
 
 **Example confirmation:**
-"Got it — ElevenLabs Hindi audio app. Last session we got TTS output
-working but hit asyncio conflicts with Flask. Today's target is the retry
-logic. Avoiding threading.Thread — using tenacity instead. Ready."
+"Got it — Whatsapp notification bot. Last session we got the message
+sending working but hit auth errors with the API token. Today's target
+is the token refresh logic. Avoiding hardcoded credentials — using .env
+instead. Ready."
 
 ---
 

@@ -50,7 +50,7 @@ To install the full stack, upload all seven `.md` files at once.
 Each skill has its own trigger phrase. Type it in any conversation inside your Claude Project:
 
 ```
-/build — I want to create an ElevenLabs audio app for Hindi news
+/build — I want to build a WhatsApp notification bot
 /adversarial-code-review
 /really-honest
 /harness-first

@@ -112,7 +112,7 @@ with: "GPT flagged these — fix them." Claude then addresses each finding.
 | Quick check mid-session | Mode A — in-chat |
 | Before going live on anything important | Mode B — second AI |
 | After a complex build with many moving parts | Both modes |
-| the user has ChatGPT open | Mode B — different blind spots |
+| User has ChatGPT open | Mode B — different blind spots |
 
 ---
 

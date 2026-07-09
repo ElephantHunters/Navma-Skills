@@ -8,8 +8,7 @@ description: >
   This skill prevents the class of problems where Claude's first response is
   polished and complete-sounding but contains glossed-over assumptions,
   overconfident claims, or subtle errors. Apply after any high-stakes response,
-  strategy output, plan, or technical recommendation. Sits alongside /honest
-  in the Thinking & Reasoning shortcode category — but operates differently.
+  strategy output, plan, or technical recommendation.
 ---
 
 # Really Honest
@@ -22,18 +21,11 @@ This skill interrupts that pattern and demands a real second look.
 
 ---
 
-## The Difference Between /honest and /really-honest
+## What /really-honest Does
 
-| Shortcode | When | What it does |
-|---|---|---|
-| /honest | Before Claude responds | No sugarcoating — give raw truth upfront |
-| /really-honest | After Claude responds | Attack the response Claude just gave |
-
-/honest shapes the response before it's written.
-/really-honest scrutinises the response after it's written.
-
-They are complementary. Use /honest when you want truth from the start.
-Use /really-honest when Claude's output feels too clean or too confident.
+/really-honest is a post-response skill — it triggers *after* Claude has
+already answered. Use it when Claude's output feels too clean, too confident,
+or too complete. It forces a genuine second examination of what was just said.
 
 ---
 
@@ -122,11 +114,6 @@ Adapted from Josh Pigford's /but-for-real skill (via Peter Yang's YouTube
 video). Josh uses this to "bully" the AI into re-examining its work,
 specifically to catch hallucinations and overconfident answers.
 
-Renamed /really-honest by the user to fit alongside /honest in his
-Thinking & Reasoning shortcode category. The underlying mechanism is
-the same: a second-pass prompt that activates a different mode of
-scrutiny than the first-pass response generation.
-
-The reason it works: AI models generate responses token by token,
+The underlying mechanism: AI models generate responses token by token,
 moving forward. The first pass is optimistic. A forced second pass
 with an adversarial framing activates a different kind of attention.

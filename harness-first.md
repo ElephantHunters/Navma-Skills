@@ -122,8 +122,8 @@ Example log entry:
 5. After each component is built, show the user the harness output —
    do not proceed until it shows PASS
 6. When a test fails, fix it before adding new tests
-7. Add comments to all non-obvious code — this is the user's /comment-all
-   preference and applies to all code generated in this session
+7. Add comments to all non-obvious code so every component is readable
+   when picked up in a future session
 
 ---
 
@@ -169,11 +169,11 @@ where the build stands without any re-explanation.
 
 ## Origin
 
-Developed by the user as a personal coding protocol for multi-session
-AI-assisted builds. The core insight: Claude has no memory between sessions,
-so the harness and logger create a verifiable record of what works.
-At session start, the user pastes AGENTS.md which includes harness status —
-Claude knows instantly what's passing, what's failing, and where to start.
+Developed as a personal coding protocol for multi-session AI-assisted builds.
+The core insight: Claude has no memory between sessions, so the harness and
+logger create a verifiable record of what works. At session start, the user
+pastes AGENTS.md which includes harness status — Claude knows instantly
+what's passing, what's failing, and where to start.
 
 Harness-first is what makes the /build + /context-loop combination
 actually reliable across sessions.
