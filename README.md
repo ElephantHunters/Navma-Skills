@@ -69,7 +69,7 @@ For `silent-fail-check` — type `/silent-fail-check` after any file has been ge
 Structured 4-phase build protocol. Prevents jumping straight to implementation.
 
 - **Phase 1 — Research:** Best approach, libraries, known pitfalls. No code.
-- **Phase 2 — Plan:** Step-by-step build plan. Each phase = one git branch.
+- **Phase 2 — Plan:** Step-by-step build plan. Each phase = one logical chunk of work (optional: one git branch).
 - **Phase 3 — Track:** Checkbox checklist of all deliverables.
 - **Phase 4 — Implement:** One phase at a time. Stop and show output after each.
 
@@ -133,7 +133,7 @@ Manual on-demand file verification. Type `/silent-fail-check` after any file gen
 - PDFs with no extractable text (image-only, no real content)
 - Corrupt DOCX, blank XLSX, broken exports
 
-Runs automatically — no trigger needed.
+Only runs when you type `/silent-fail-check` — it never fires automatically.
 
 ---
 
