@@ -50,8 +50,9 @@ Claude must produce:
 
 Output: a structured plan. No code yet.
 
-Each phase in the plan maps to a separate git branch:
+If you use git, each phase in the plan can map to a separate branch:
 `feature/phase-1-scaffold`, `feature/phase-2-core-logic`, etc.
+This is optional — skip it if you don't use version control.
 
 Wait for the user's approval before moving to Phase 3.
 
@@ -125,7 +126,7 @@ After each phase: update the tracking checklist.
 - If the user pushes for speed, acknowledge it but still complete Phase 1
   and Phase 2 before touching code — the plan takes minutes, the bugs
   from skipping it take hours
-- Each build phase maps to a separate git branch
+- Each build phase can map to a separate git branch — optional if you don't use version control
 
 ---
 

@@ -34,7 +34,7 @@ a meaningful conclusion or produce something worth continuing.
 
 **Project Mode** — inside a Claude Project. Project Knowledge is available.
 AGENTS.md lives in Project Knowledge, not on the user's desktop.
-Static files (skills, preferences, shortcodes) are already loaded automatically.
+Static files (skills, preferences) are already loaded automatically.
 
 If unsure which mode is active, check whether Project Knowledge is present
 in context. If it is — Project Mode. If not — Chat Mode.
@@ -70,6 +70,9 @@ CHAT GETS INTERESTING / REACHES MEANINGFUL CONCLUSION
 - If the user forgets to paste AGENTS.md, prompt: "Do you have an AGENTS.md
   for this project? Paste it and I'll pick up exactly where we left off."
 - If no AGENTS.md exists yet, offer to create one from the current conversation.
+- **First time using this skill?** No AGENTS.md yet is completely normal.
+  Just tell Claude what your project is and what you've done so far —
+  Claude will generate your first AGENTS.md on the spot.
 
 ---
 
@@ -100,8 +103,8 @@ NEXT SESSION
 
 **Project Mode rules:**
 - Do NOT ask the user to paste AGENTS.md — it is already in Project Knowledge
-- Do NOT ask the user to re-explain static context (skills, preferences,
-  shortcodes) — those are already loaded via Project Knowledge
+- Do NOT ask the user to re-explain static context (skills, preferences)
+  — those are already loaded via Project Knowledge
 - The only thing that changes session to session is AGENTS.md content —
   focus confirmation paragraph on what changed since last session
 - After /learnings, remind the user: "Update AGENTS.md in Project Knowledge
@@ -109,9 +112,7 @@ NEXT SESSION
 
 **What Project Knowledge handles automatically (no loop needed):**
 - Skill files (silent-fail-check, context-loop, etc.)
-- Shortcode library and preferences
-- Harness-first protocol
-- Any static reference documents
+- Any preferences or static reference documents
 
 **What the loop still handles in Project Mode:**
 - Current build state — what was built this session
@@ -192,7 +193,7 @@ NEXT STEP: [one line]
 
 ---
 
-## Shortcode Triggers
+## Trigger Phrases
 
 | Trigger | Moment | Claude action |
 |---|---|---|
