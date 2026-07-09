@@ -95,7 +95,7 @@ Second-pass scrutiny. Claude's first answer is optimistic. This forces a real se
 - What's the weakest part of what I just said?
 - What would I change if reviewing someone else's answer?
 
-Sits alongside `/honest` in Thinking & Reasoning. `/honest` shapes the response before it's written. `/really-honest` attacks it after.
+
 
 ---
 
