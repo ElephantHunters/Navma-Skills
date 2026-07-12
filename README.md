@@ -14,9 +14,9 @@ These skills are installable into any Claude Project. Once uploaded to Project K
 
 | Skill | Trigger | What it does |
 |---|---|---|
-| `/build` | `/build` | 4-phase structured build — Research → Plan → Track → Implement. Never writes code before Phase 4. |
-| `/adversarial-code-review` | `/adversarial-code-review` or `/code_critique` | Two-mode code review. Claude attacks its own output, or provides the exact prompt for a second AI to do so. |
-| `/really-honest` | `/really-honest` | Forces Claude to re-examine its previous response. What was glossed over? What assumption could be wrong? |
+| `build` | `/build` | 4-phase structured build — Research → Plan → Track → Implement. Never writes code before Phase 4. |
+| `adversarial-code-review` | `/adversarial-code-review` or `/code_critique` | Two-mode code review. Claude attacks its own output, or provides the exact prompt for a second AI to do so. |
+| `really-honest` | `/really-honest` | Forces Claude to re-examine its previous response. What was glossed over? What assumption could be wrong? |
 | `harness-first` | `/harness-first` | Scaffolds the test harness before writing any feature logic. Keeps multi-session builds verifiable. |
 | `context-loop` | `/context-loop` | Session continuity via AGENTS.md. Prevents re-explaining project context every session. Works in Chat Mode and Project Mode. |
 | `silent-fail-check` | `/silent-fail-check` | Manual on-demand file verification. Catches empty PDFs, corrupt DOCX, blank XLSX that "succeeded". |
@@ -159,7 +159,7 @@ Banned phrases: "simply", "just", "obviously", "as you may know."
 
 ## Attribution
 
-The core workflow skills (`/build`, `/adversarial-code-review`, `/really-honest`) were inspired by **Josh Pigford's** AI development workflow, shared by **Peter Yang** on YouTube:
+The core workflow skills (`build`, `adversarial-code-review`, `really-honest`) were inspired by **Josh Pigford's** AI development workflow, shared by **Peter Yang** on YouTube:
 
 > *"The Exact AI Skills This Solo Founder Uses"* — [@PeterYangYT](https://www.youtube.com/@PeterYangYT)
 
