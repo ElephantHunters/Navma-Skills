@@ -65,7 +65,7 @@ For `silent-fail-check` — type `/silent-fail-check` after any file has been ge
 
 ## Skills detail
 
-### /build
+### build
 Structured 4-phase build protocol. Prevents jumping straight to implementation.
 
 - **Phase 1 — Research:** Best approach, libraries, known pitfalls. No code.
@@ -77,7 +77,7 @@ Claude waits for your approval between every phase.
 
 ---
 
-### /adversarial-code-review
+### adversarial-code-review
 Two-mode review skill. The goal is to break the code, not validate it.
 
 - **Mode A (in-chat):** Claude reviews its own code adversarially — logic errors, edge cases, production assumptions, security gaps, efficiency problems. Output ranked CRITICAL / HIGH / MEDIUM / LOW.
@@ -87,7 +87,7 @@ Josh Pigford (the inspiration for this skill) said this catches 3–5 bugs every
 
 ---
 
-### /really-honest
+### really-honest
 Second-pass scrutiny. Claude's first answer is optimistic. This forces a real second look.
 
 - What did I gloss over?
